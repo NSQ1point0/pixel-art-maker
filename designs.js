@@ -150,7 +150,7 @@ $(document).ready(function() {
       }
     });
   });
-$(document).ready(function(e){
+/*$(document).ready(function(e){
   $("#btn-export").click(function(e){
     $("table").tableExport({
       bootstrap: false,
@@ -158,7 +158,8 @@ $(document).ready(function(e){
       fileName: "table"
     });
   });
-});
+});*/
+
   //calling grid function
   $(".button-submit").click(function(e) {
     e.preventDefault();
