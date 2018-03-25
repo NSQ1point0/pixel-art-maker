@@ -5,30 +5,58 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script type="text/javascript" src="FileSaver/FileSaver.js"></script>
+  <script type="text/javascript" src="TableExport/dist/js/tableexport.js"></script>
   <meta charset="UTF-8">
 </head>
 
 <body class="night">
-  <h1 class="heading">NumbSkull: Pixel Art Maker</h1>
+  <div>
+    <h1 class="heading">NumbSkull: Pixel Art Maker</h1>
+  </div>
+  <div>
+    <h2 class="floaters">Choose Grid Size</h2>
+    <form>
+      Grid Height:
+      <input type="number" class="inputHeight" name="height" value="1" min="1" max="200"> Grid Width:
+      <input type="number" class="inputWeight" name="width" value="1" min="1" max="200">
+      <input class="button-submit" type="submit">
+      <input type="reset" class="button-reset"> Pixel size:
+      <input type="range" value="15" min="10" max="35" step="1" class="range">
+    </form>
+  </div>
+  <div>
+    <button class="button">Light <span class="light-off">off</span><span class="light-on">on</span></button>
+    <h2 class="floaters">Pick A Color</h2>
+    <input type="color" class="colorPicker" value="#0061ff">
 
-  <h2 class="floaters">Choose Grid Size</h2>
-  <form>
-    Grid Height:
-    <input type="number" class="inputHeight" name="height" value="1" min="1" max="1000"> Grid Width:
-    <input type="number" class="inputWeight" name="width" value="1" min="1" max="1000">
-    <input class="button-submit" type="submit">
-    Pixel size:
-    <input type="range" value="15" min="15" max="24" class="range">
-  </form>
-  <button class="button">Light <span class="light-off">off</span><span class="light-on">on</span></button>
-  <h2 class="floaters">Pick A Color</h2>
-  <input type="color" class="colorPicker">
+    <h2 class="floaters">Design Canvas</h2>
 
-  <h2 class="floaters">Design Canvas</h2>
-
+    <button id="btn-export">Export</button>
+    <button id="btn-import">Import</button>
     <p>left click mouse button or drag to draw </p>
     <p>Right click mouse button or drag to erase pixel</p>
-  <table class="pixelCanvas"></table>
+  </div>
+  <div>
+    <button class="btn-col-left"></button>
+    <tag>add column left/right</tag>
+    <button class="btn-col-right"></button>
+    <button class="btn-row-top"></button>
+    <tag>add row top/bottom</tag>
+    <button class="btn-row-bottom"></button>
+    <table id="pixelCanvas"></table>
+    <button class="btn-col-dlt-right"></button>
+    <tag>delete column left/right</tag>
+    <button class="btn-col-dlt-left"></button>
+    <button class="btn-row-dlt-top"></button>
+    <tag>delete row top/bottom</tag>
+    <button class="btn-row-dlt-bottom"></button>
+  </div>
+  <a id="link"><button id="download">download</button></a>
+  <button id="preview">preview</button>
+  <div id="previewBox"></div>
   <script src="designs.js"></script>
-  </body>
+</body>
+
 </html>
