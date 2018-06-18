@@ -17,7 +17,7 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 
 weblink
-https://numbskullq1.github.io/project-pixel-art-maker-starter-master/
+https://numbskullq1.github.io/pixel-art-maker/
 
 source
 https://github.com/NumbSkullq1/project-pixel-art-maker-starter-master
